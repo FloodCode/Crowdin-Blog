@@ -36,7 +36,7 @@ $module_name = Tools::getModuleName($content_view);
                     <ul class="nav navbar-nav navbar-right">
 <?php if (Route::checkAuth()): ?>
                         <li<?php if ($module_name == 'addpost') { echo ' class="active"'; } ?>>
-                            <a href="/main/add/"><span class="glyphicon glyphicon-plus"></span> Add post</a>
+                            <a href="/main/add/"><span class="glyphicon glyphicon-plus"></span> Add Post</a>
                         </li>
                         <li>
                             <a href="/auth/logout/"><span class="glyphicon glyphicon-log-out"></span> Log Out</a>

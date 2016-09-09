@@ -17,6 +17,28 @@ class Tools
         }
         return $module_name;
     }
+
+    static function getCommentCount($post_id)
+    {
+        $stmt = $GLOBALS['DB']->prepare('SELECT COUNT(*) FROM comments WHERE `post_id` = :post_id;');
+        $res = $stmt->execute(array(
+            ':post_id' => $post_id
+        ));
+
+        if ($res == false)
+        {
+            return 0;
+        }
+
+        $comments_count = $stmt->fetch(PDO::FETCH_COLUMN);
+
+        if ($comments_count == false)
+        {
+            return 0;
+        }
+
+        return $comments_count;
+    }
 }
 
 ?>
